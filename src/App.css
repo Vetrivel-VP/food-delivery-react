@@ -104,7 +104,6 @@ main {
 
 .leftMenu ul {
   display: flex;
-  width: 100%;
 }
 
 .leftMenu ul li {
