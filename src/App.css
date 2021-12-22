@@ -2,161 +2,207 @@
   width: 100vw;
   height: 100vh;
   background: #faf9fb;
-  display: flex;
+  overflow: hidden;
 }
 
-.leftMenu {
-  width: calc(100vh - 85vh);
-  height: 100vh;
-  background: #ffffff;
-  box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.leftMenu ul {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
-}
-
-.leftMenu ul li {
-  margin: 15px 0;
-}
-
-.leftMenu ul li .iconContainer {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.leftMenu ul li .iconContainer i .MuiSvgIcon-root {
-  font-size: 30px;
-  color: #747680;
-}
-
-.leftMenu ul li .iconContainer.iconBg {
-  background: #fb9300;
-  box-shadow: 0px 5px 20px rgba(251, 147, 0, 0.45);
-}
-
-.leftMenu ul li .iconContainer.iconBg i .MuiSvgIcon-root {
-  color: #ffffff;
-}
-
-.mainContainer {
-  flex: 1;
-  padding: 0 20px;
-  padding-top: 30px;
-}
-
-.todayMenu {
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 5px 15px;
+  height: 60px;
 }
 
-.todayMenu h1 {
-  font-size: 24px;
-  display: flex;
-  align-items: center;
+.logo {
+  min-width: 40px;
+  width: 50px;
 }
 
-.todayMenu h1 span img {
-  width: 35px;
-  margin-left: 10px;
-}
-
-.todayMenu .searchBox {
-  display: flex;
-  align-items: center;
+.inputBox {
   background: #ffffff;
-  width: fit-content;
-  height: fit-content;
-  padding: 10px 20px;
-  border-radius: 100vw;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
-}
-
-.todayMenu .searchBox input {
-  width: 250px;
-  outline: none;
-  border: none;
-  letter-spacing: 0.8px;
-  font-weight: bold;
-}
-
-.todayMenu .searchBox input::placeholder,
-.todayMenu .searchBox .MuiSvgIcon-root {
-  color: #747680;
-}
-
-.banner {
-  width: 100%;
-  height: 180px;
-  border-radius: 15px;
-  margin-top: 40px;
-  position: relative;
+  border-radius: 25px;
   display: flex;
-  background: url("https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Fbanner.png?alt=media&token=7e244d84-8821-477d-b273-4c9381a474fb");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  align-items: center;
+  overflow: hidden;
+  padding: 8px 15px;
+  width: 180px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
 }
 
-.banner .bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-}
-
-.banner .deliver {
-  width: 320px;
-  margin-left: -35px;
-  margin-top: -25px;
-}
-
-.banner .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-}
-
-.banner .content h2 {
-  color: #2a2b3c;
+.inputBox .searchIcon {
+  color: #787a84;
   font-size: 20px;
 }
 
-.banner .content p {
-  color: #9d9998;
-  margin: 10px 0;
-}
-
-.banner .content p span {
-  color: #fb9300;
-  font-weight: 700;
-}
-
-.banner .content a {
-  background: #fb9300;
-  padding: 10px 25px;
-  border-radius: 25px;
-  color: #faf9fb;
+.inputBox input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #787a84;
+  padding-left: 8px;
   font-size: 14px;
+  font-weight: 500;
 }
 
-.cartMenu {
-  width: calc(100vw - 75vw);
-  height: 100vh;
-  background: #ffffff;
-  box-shadow: -5px 0px 20px rgba(0, 0, 0, 0.05);
+.profileContainer {
+  display: flex;
+}
+
+.profileContainer .imgBox {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.profileContainer .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileContainer .userName {
+  font-size: 16px;
+  font-weight: 500;
+  display: none;
+}
+
+.toggleMenu {
+  transform: rotate(90deg);
+}
+
+.toggleMenu .toggleIcon {
+  color: #373848;
+  font-size: 24px !important;
+}
+
+main {
+  width: 100%;
+  height: calc(100% - 60px);
+  position: relative;
+}
+
+.leftMenu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: #d5d5d5;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.leftMenu ul {
+  display: flex;
+  width: 100%;
+}
+
+.leftMenu ul li {
+  position: relative;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+}
+
+.leftMenu ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.leftMenu ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 70px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.leftMenu ul li a .icon .MuiSvgIcon-root {
+  font-size: 26px;
+  color: #373848;
+}
+
+.leftMenu ul li.active a .icon {
+  transform: translateY(-26px);
+}
+
+.leftMenu ul li.active a .icon .MuiSvgIcon-root {
+  color: #faf9fb;
+  transition: 0.5s;
+}
+
+.indicator {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background: #f8901c;
+  top: -50%;
+  border-radius: 50%;
+  border: 6px solid #faf9fb;
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border-top-right-radius: 18px;
+  box-shadow: 0px -10px 0 0 #faf9fb;
+}
+
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border-top-left-radius: 18px;
+  box-shadow: 0px -10px 0 0 #faf9fb;
+}
+
+.leftMenu ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(60px * 0));
+}
+
+.leftMenu ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(60px * 1));
+}
+
+.leftMenu ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(60px * 2));
+}
+
+.leftMenu ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(60px * 3));
+}
+
+.leftMenu ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(calc(60px * 4));
+}
+
+.leftMenu ul li:nth-child(6).active ~ .indicator {
+  transform: translateX(calc(60px * 5));
 }
