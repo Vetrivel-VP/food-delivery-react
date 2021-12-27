@@ -1,7 +1,18 @@
-import { BarChart, SearchRounded } from "@mui/icons-material";
-import React from "react";
+import {
+  BarChart,
+  SearchRounded,
+  ShoppingCartRounded,
+} from "@mui/icons-material";
+import React, { useEffect } from "react";
 
 function Header() {
+  useEffect(() => {
+    const toggleIcon = document.querySelector(".toggleMenu");
+    toggleIcon.addEventListener("click", () => {
+      document.querySelector(".rightMenu").classList.toggle("active");
+    });
+  }, []);
+
   return (
     <header>
       <img
@@ -13,6 +24,13 @@ function Header() {
       <div className="inputBox">
         <SearchRounded className="searchIcon" />
         <input type="text" placeholder="Search" />
+      </div>
+
+      <div className="shoppingCart">
+        <ShoppingCartRounded className="cart" />
+        <div className="cart_content">
+          <p>3</p>
+        </div>
       </div>
 
       <div className="profileContainer">
