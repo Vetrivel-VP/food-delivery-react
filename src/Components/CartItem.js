@@ -1,6 +1,9 @@
-import React from "react";
+import { AddRounded, RemoveRounded } from "@mui/icons-material";
+import React, { useState } from "react";
 
-function CartItem({ name, imgSrc, qty, price }) {
+function CartItem({ name, imgSrc, price }) {
+  const [qty, setQty] = useState(1);
+
   return (
     <div className="cartItem">
       <div className="imgBox">
@@ -8,9 +11,16 @@ function CartItem({ name, imgSrc, qty, price }) {
       </div>
       <div className="itemSection">
         <h2 className="itemName">{name}</h2>
-        <p className="itemQuantity">
-          <span>x</span> {qty}
-        </p>
+        <div className="itemQuantity">
+          <span>x {qty}</span>
+          <div className="quantity">
+            <RemoveRounded
+              className="itemRemove"
+              onClick={() => setQty(qty - 1)}
+            />
+            <AddRounded className="itemAdd" onClick={() => setQty(qty + 1)} />
+          </div>
+        </div>
       </div>
       <p className="itemPrice">
         <span>$</span> {parseInt(qty) * parseFloat(price)}
