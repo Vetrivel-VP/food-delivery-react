@@ -25,7 +25,8 @@ function App() {
     Items.filter((element) => element.itemId == "buger01")
   );
 
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, total }, dispatch] = useStateValue();
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     const menuLi = document.querySelectorAll("#menu li");
@@ -48,7 +49,7 @@ function App() {
     }
 
     menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
-  }, [isMainData]);
+  }, [isMainData, cart, total, totalPrice]);
 
   const setData = (itemId) => {
     setMainData(Items.filter((element) => element.itemId == itemId));
@@ -147,6 +148,7 @@ function App() {
                     cart.map((data) => (
                       <CartItem
                         key={data.id}
+                        itemId={data.id}
                         name={data.name}
                         imgSrc={data.imgSrc}
                         qty={"4"}
@@ -158,7 +160,7 @@ function App() {
               <div className="totalSection">
                 <h3>Total</h3>
                 <p>
-                  <span>$ </span> 20.64
+                  <span>$ </span> {total}
                 </p>
               </div>
               <button className="checkOut">Check Out</button>

@@ -91,6 +91,10 @@ header {
   color: #faf9fb;
 }
 
+.shoppingCart .noCartItem {
+  display: none;
+}
+
 .profileContainer {
   display: flex;
   align-items: center;
@@ -839,9 +843,14 @@ main {
   margin-left: auto;
 }
 
-.cartItem .itemPrice span {
+.cartItem .itemPrice .dolorSign {
   font-size: 12px;
   color: #f8901c;
+}
+
+.cartItem .itemPrice .itemPriceValue {
+  font-size: 16px;
+  color: #373848;
 }
 
 .totalSection {

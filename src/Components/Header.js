@@ -4,8 +4,11 @@ import {
   ShoppingCartRounded,
 } from "@mui/icons-material";
 import React, { useEffect } from "react";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ cart }, dispatch] = useStateValue();
+
   useEffect(() => {
     const toggleIcon = document.querySelector(".toggleMenu");
     toggleIcon.addEventListener("click", () => {
@@ -28,8 +31,8 @@ function Header() {
 
       <div className="shoppingCart">
         <ShoppingCartRounded className="cart" />
-        <div className="cart_content">
-          <p>3</p>
+        <div className={`${!cart ? "noCartItem" : "cart_content"}`}>
+          <p>{cart ? cart.length : ""}</p>
         </div>
       </div>
 
